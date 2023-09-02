@@ -3,8 +3,11 @@
 #include <string.h>  // String operations
 #include <stdbool.h>  // Boolean types
 
-// Function Declaration
+// Function declaration
 void myFunction(int x, float y);
+
+// Function declaration
+void myFunctionByReference(int *x, float *y);
 
 int main() {
     printf("Hello, World!\n");
@@ -68,6 +71,7 @@ int main() {
 
     // Function Call
     myFunction(a, b);
+    myFunctionByReference(&a, &b);
 
     // Memory Allocation (Requires #include <stdlib.h>)
     int *dynamicArr = (int *) malloc(5 * sizeof(int));
@@ -82,7 +86,12 @@ int main() {
     return 0;
 }
 
-// Function Definition
+// Function definition
 void myFunction(int x, float y) {
     printf("In myFunction: x = %d, y = %.2f\n", x, y);
+}
+
+// Function definition
+void myFunctionByReference(int *x, float *y) {
+    printf("In myFunctionByReference: x = %d, y = %.2f\n", *x, *y);
 }
